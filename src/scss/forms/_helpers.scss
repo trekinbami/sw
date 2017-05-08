@@ -1,0 +1,50 @@
+/*
+	1. Hier zet je je standaard regels voor forms neer
+	2. Ook eventuele hulp-classes voor specifiek forms kun je hier kwijt
+*/
+
+fieldset{
+	margin:0;
+	padding: 0;
+	border:0;
+}
+
+input{
+	background: none;
+	border: solid 1px $mainBorder;
+	border-radius: 2px;
+	outline: none;
+	width:100%;
+	padding:10px;
+	font-size:14px;
+	&[type="search"]{ box-sizing: border-box; }
+
+	&:disabled{
+		background-color: rgba(215, 215, 215, 0.5);
+		color:$inputColor;
+	}
+}
+
+textarea{
+	border: solid 1px $mainBorder;
+	border-radius: 2px;
+	outline: none;
+	width:100%;
+	padding:10px;
+	font-size:14px;
+}
+
+label{ cursor: pointer; }
+
+.default-widths{
+	@include media(">=768px"){
+		// .input-cnt{
+		// 	flex:0 0 300px;
+		// }
+		// input[type="text"],
+		// input[type="number"],
+		// input[type="email"]{
+		// 	width:300px;
+		// }
+	}
+}

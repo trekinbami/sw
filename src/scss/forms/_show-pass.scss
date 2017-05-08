@@ -1,0 +1,22 @@
+.show-pass{
+  position: relative;
+}
+
+.show-pass__btn{
+  border:0;
+  border:1px solid $mainBorder;
+  color:$inputColor;
+  font-size:12px;
+  padding: 2px 25px;
+  position: absolute;
+  right:10px;
+  bottom:9px;
+  background: none;
+  transition: all 70ms ease;
+
+  // &:hover{
+  //   background:$darkblue;
+  //   color:$white;
+  //   border:1px solid $darkblue;
+  // }
+}

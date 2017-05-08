@@ -1,0 +1,281 @@
+.custom-radio{
+	position: relative;
+	display: inline-block;
+
+/*circle*/
+	&:before{
+		content: "";
+		width:12px;
+		height:12px;
+		border-radius: 12px;
+		border:1px solid $warmGrey;
+		background:$white;
+		margin-right:5px;
+		display: block;
+	}
+
+	/*check*/
+	&:after{
+		content:"";
+		width: 8px;
+		height: 8px;
+		border-radius: 8px;
+		background:$warmGrey;
+		left:2px;
+		top:5px;
+		position: absolute;
+		display: none;
+	}
+
+	&.is-active:after{ display: block; }
+}
+	/* positionering */
+	.custom-radio--row{
+		display: flex;
+		align-items:center;
+
+		&:after {
+			top:50%;
+			transform:translateY(-50%);
+		}
+	}
+	.custom-radio__msg{
+		font-size:em(14,16);
+		color:$inputColor;
+		position: relative;
+		top:1px;
+	}
+/*
+	mock mock radio
+	deze kun je gebruiken als de visuele weergave wilt hebben van een custom radio, maar niet de JS functionaliteit
+*/
+
+.mock-custom-radio{
+	@extend .custom-radio;
+}
+
+/* Visual Custom Radio */
+.visual-radio {
+	display: flex;
+	align-items: center;
+	padding:25px 10px;
+	transition: all 190ms ease;
+
+	.custom-radio{
+		margin-right:25px;
+
+		&:before{
+			width:20px;
+			height:20px;
+			border:3px solid;
+			border-radius: 20px;
+			background:none;
+		}
+	}
+
+	&.is-active{
+		.custom-radio:before{
+			width:24px;
+			height:24px;
+			border-radius: 24px;
+		}
+
+		.custom-radio:after{
+			width: 14px;
+			height: 14px;
+			border-radius: 14px;
+			top: 5px;
+			left: 5px;
+			display: block;
+		}
+
+		.custom-radio:before{ border-color:$white; }
+		.custom-radio:after{ background:$white; }
+
+		.custom-radio__title,
+		.custom-radio__price,
+		.custom-radio__titlesub,
+		.custom-radio__subtitle{ color:$white; }
+	}
+}
+
+	.custom-radio__header{
+		@include media(">=768px"){
+			display: flex;
+			align-items: center;
+			margin-bottom:5px;
+		}
+	}
+		.custom-radio__title{
+			margin:0;
+			font-size:em(18,16);
+			color:$darkblue;
+		}
+		.custom-radio__price{
+			font-size:em(18,16);
+			font-weight:700;
+			color:$mainBlue;
+		}
+		.custom-radio__titlesub{
+			display: block;
+			font-size:em(14,16);
+			color:$subtitlePrimary;
+
+			@include media(">=768px"){
+				margin-left:10px;
+			}
+
+			@include media("<768px"){
+				margin-bottom:10px;
+			}
+		}
+		.custom-radio__subtitle{ color:$subtitlePrimary; }
+
+.visual-radio--first{
+	background-image: linear-gradient(-135deg, rgba(0,163,218, 0.1) 0%, rgba(146,42,125, 0.1) 100%);
+		.custom-radio:before{ border-color:$mainBlue; }
+		.custom-radio:after{ background:$mainBlue; }
+
+		&.is-active{
+			background-image: linear-gradient(-135deg, rgba(0,163,218, 1) 0%, rgba(146,42,125, 1) 100%);
+		}
+}
+
+.visual-radio--second{
+	background-image: linear-gradient(-135deg, rgba(41,45,120,0.1) 0%, rgba(0,163,218, 0.1) 100%);
+		.custom-radio:before{ border-color:$darkblue; }
+		.custom-radio:after{ background:$darkblue; }
+
+		&.is-active{
+			background-image: linear-gradient(-135deg, rgba(41,45,120,1) 0%, rgba(0,163,218, 1) 100%);
+		}
+}
+
+.visual-radio--third{
+	background-image: linear-gradient(-135deg, rgba(146,42,125, 0.1) 0%, rgba(41,45,120, 0.1) 100%);
+		.custom-radio:before{ border-color:$darkblue; }
+		.custom-radio:after{ background:$darkblue; }
+
+		&.is-active{
+			background-image: linear-gradient(-135deg, rgba(146,42,125, 1) 0%, rgba(41,45,120, 1) 100%);
+		}
+}
+
+.visual-radio--fourth{
+	background-image: linear-gradient(-135deg, rgba(237,138,35, 0.1) 0%, rgba(146,42,125, 0.1) 100%);
+		.custom-radio:before{ border-color:$darkblue; }
+		.custom-radio:after{ background:$darkblue; }
+
+		&.is-active{
+			background-image: linear-gradient(-135deg, rgba(237,138,35, 1) 0%, rgba(146,42,125, 1) 100%);
+		}
+}
+
+.custom-radio--row{
+	margin-right:10px;
+
+	&:last-of-type{ margin-right:0; }
+}
+
+.custom-checkbox{
+	position: relative;
+	cursor: pointer;
+	display: flex;
+
+	/*square*/
+	&:before{
+		content: "";
+		width:12px;
+		height:12px;
+		border:1px solid $mainBorder;
+		border-radius: 2px;
+		background:$white;
+		margin-right:5px;
+		display: block;
+		position: relative;
+		top:1px;
+	}
+
+	/*check*/
+	&:after{
+		content:"";
+		width:6px;
+		height:6px;
+		background:$darkblue;
+		left:3px;
+		top:4px;
+		position: absolute;
+		display: none;
+		border-radius: 2px;
+	}
+
+	&.is-active:after{ display: block; }
+}
+	.custom-checkbox__text{
+		margin-left:5px;
+		line-height: 1;
+		flex:1;
+	}
+
+	.custom-checkbox__text--sub{
+		color:$inputColor;
+		font-size:14px;
+	}
+
+/*custom select*/
+.mock-select{
+	border:1px solid $mainBorder;
+	border-radius: 2px;
+	display:flex;
+	align-items:center;
+	padding:10px;
+	position: relative;
+	cursor: pointer;
+
+		select{
+			opacity: 0;
+			position: absolute;
+			left:0;
+			top:0;
+			width:100%;
+			height:100%;
+			z-index: 2;
+			appearance: menulist-button;
+			cursor: pointer;
+		}
+}
+	.mock-select__text{
+		font-size:em(14,16);
+		position: relative;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		color: $inputColor;
+	}
+
+	.mock-select__icon{
+		position: absolute;
+		right:0;
+		top:50%;
+		transform:translateY(-50%);
+		font-size:8px;
+		color: $inputColor;
+	}
+
+
+/* checkbox btn */
+.checkbox-btn{
+	border:1px solid $mainBorder;
+	padding:10px;
+	font-size:1em;
+	text-align: center;
+	min-width:150px;
+	border-radius: 2px;
+	color:$inputColor;
+
+	&.is-active{
+		background:$mainGreen;
+		border:1px solid $mainGreen;
+		color:$white;
+	}
+}

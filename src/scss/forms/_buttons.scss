@@ -1,0 +1,108 @@
+.btn{
+  display: inline-flex;
+  font-size:1rem;
+  padding:12px 20px;
+  border-radius: 2px;
+  border:0;
+  outline: none;
+  line-height: 1;
+  position: relative;
+  font-weight: 100;
+  background:$white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size:12px;
+}
+  .btn--lined{
+    border:1px solid #674172;
+    border-radius: 2px;
+    transition: all 80ms ease;
+    color:#674172;
+
+
+    &:hover, &.is-active{ background:#674172; color:$white; }
+  }
+
+  .btn--regular{
+    background:$mainBlue;
+    color:$white;
+    box-shadow: 0 1px 0 #0080c5;
+
+    &:active{
+      top:1px;
+      box-shadow:none;
+    }
+  }
+
+  .btn--secondary{
+    background:$mainPurple;
+    color:$white;
+    box-shadow: 0 1px 0 #742a7b;
+
+    &:active{
+      top:1px;
+      box-shadow:none;
+    }
+  }
+
+  .btn--tertiary{
+    background:$subtitlePrimary;
+    color:$white;
+    box-shadow: 0 1px 0 #3a3a3a;
+
+    &:active{
+      top:1px;
+      box-shadow:none;
+    }
+  }
+
+  .btn--light{
+    background:$bgGrey;
+    color:$subtitlePrimary;
+    box-shadow: 0 1px 0 $subtitleSecondary;
+    font-weight: 700;
+
+    &:active{
+      top:1px;
+      box-shadow: none;
+    }
+  }
+
+  .btn--full{
+    width:100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn--large{
+    @include media(">=768px"){
+      width:375px;
+      justify-content: center;
+    }
+  }
+
+  .btn--sm{
+    font-size:10px;
+    padding:6px 10px;
+  }
+
+  .btn--table{
+    @include media(">=768px"){
+      // position: absolute;
+      // right:0;
+      // top:50%;
+      // transform:translateY(-50%);
+      // float:right;
+    }
+
+    @include media("<768px"){ font-size:14px; }
+  }
+
+
+.btn-cnt{
+  display: flex;
+
+  > *{ margin-left:10px; }
+  .btn:first-of-type{ margin-left:0; }
+}
+  .btn-cnt--center{ justify-content: center; }

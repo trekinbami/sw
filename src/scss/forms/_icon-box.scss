@@ -1,0 +1,19 @@
+.icon-box{
+  position: relative;
+
+  .icon{
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+  }
+}
+
+  .icon-box--end{
+    .icon{ right:10px; }
+    input{ padding-right:40px; }
+  }
+
+  .icon-box--start{
+    .icon{ left:10px; }
+    input{ padding-left:40px; }
+  }

@@ -1,0 +1,31 @@
+.detail-list{
+  margin:0;
+  padding:0;
+  list-style: none;
+
+    & > li{
+      display: flex;
+      border-bottom:1px solid #f0f0f0;
+    }
+
+      .detail-list__title{
+        text-transform: uppercase;
+        padding:10px;
+        padding-top:14px;
+        margin-right:20px;
+        font-size:10px;
+        background-color:#f0f0f0;
+        width:40%;
+      }
+
+      .detail-list__content{
+        padding:10px;
+        font-size:12px;
+        flex:1;
+      }
+
+      .detail-list__sub-list{
+        margin:0;
+        padding-left:1rem
+      }
+}

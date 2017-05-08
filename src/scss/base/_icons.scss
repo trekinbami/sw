@@ -1,0 +1,19 @@
+svg.icon{
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+  .rotate-90{
+    transform:rotate(-90deg);
+  }
+
+  .rotate90{
+    transform:rotate(90deg);
+  }
+
+  .rotate-180{
+    transform:rotate(-180deg);
+  }

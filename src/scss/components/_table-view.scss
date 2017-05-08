@@ -1,0 +1,32 @@
+.table-view{
+  width:100%;
+  margin:0 auto;
+  position: relative;
+
+  &.is-loading:before{
+    content: attr(data-loading-msg);
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    min-height:200px;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgba(255,255,255,0.7);
+    z-index: 2;
+  }
+
+  tbody{ position: relative; z-index: 1; }
+  tbody tr:nth-child(odd){ background:#f7f7f7; }
+  tbody tr td:last-child{ width: 1px; white-space: nowrap;}
+
+  th{
+    text-align: left;
+    background:#674172;
+    color:$white;
+  }
+
+  th,td{ padding:10px; }
+}
